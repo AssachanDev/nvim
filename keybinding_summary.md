@@ -36,9 +36,7 @@ This file summarizes the keybindings for the installed Neovim plugins.
 | Key | Mode(s) | Action |
 |---|---|---|
 | `s` | Normal, Visual, Operator-pending | Jump to any character on the screen. |
-| `S` | Normal, Visual, Operator-pending | Jump to any node in the syntax tree. |
 | `r` | Operator-pending | Remote flash (for visual modes from other windows). |
-| `R` | Operator-pending, Visual | Search within the syntax tree. |
 | `<c-s>` | Command | Toggle Flash search. |
 
 ## Smooth Scrolling (neoscroll.nvim)
@@ -98,9 +96,7 @@ These keybindings replace the default `u`, `U`, `p`, `P`, etc. to add a highligh
 | (None) | Automatic | Dims inactive code to improve focus. Can be toggled with `:Twilight <on/off/toggle>`. | `folke/twilight.nvim` |
 | (None) | Automatic | Automatically updates file icon colors to match colorscheme. | `rachartier/tiny-devicons-auto-colors.nvim` |
 | (None) | Automatic | Displays current code context (breadcrumbs) using LSP. | `SmiteshP/nvim-navic` |
-| `<leader>bp` | Normal | Go to previous buffer. | `akinsho/bufferline.nvim` |
-| `<leader>bn` | Normal | Go to next buffer. | `akinsho/bufferline.nvim` |
-| `<leader>bc` | Normal | Close current buffer. | `akinsho/bufferline.nvim` |
+| (None) | Automatic | A snazzy buffer line for easy management of buffers. Keybindings are not set by default. | `akinsho/bufferline.nvim` |
 
 *   **nvim-tree/nvim-web-devicons**: Adds file-type icons to various plugins.
 

@@ -35,6 +35,7 @@ This file provides a summary of the installed Neovim plugins and their purpose.
 ## Git Integration
 
 *   **lewis6991/gitsigns.nvim**: A plugin to show git signs in the sign column.
+*   **sindrets/diffview.nvim**: A Git diff viewer that enhances the experience of reviewing changes. It is a dependency for `yazi.nvim`.
 
 ## UI and UX
 
