@@ -1,4 +1,5 @@
-
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 -- [[ Install `lazy.nvim` plugin manager ]]
 -- See: https://github.com/folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -33,6 +34,8 @@ require("lazy").setup({
       vim.cmd.colorscheme("catppuccin-mocha")
     end,
   },
+
+
   -- Add any other plugins here
   {
     "nvim-telescope/telescope.nvim",
@@ -95,15 +98,7 @@ require("lazy").setup({
       require("nvim-tree").setup {}
     end,
   },
-  {
-    "ibhagwan/fzf-lua",
-    -- optional for icon support
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      -- calling `setup` is optional for customization
-      require("fzf-lua").setup({})
-    end,
-  },
+
   {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -182,9 +177,7 @@ require("lazy").setup({
     -- stylua: ignore
     keys = {
       { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
       { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
@@ -632,11 +625,7 @@ vim.keymap.set('n', '<leader>y', ':Yazi<CR>')
 
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
 
--- Find files using fzf-lua
-vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>")
-vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>")
-vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<cr>")
-vim.keymap.set("n", "<leader>fh", "<cmd>FzfLua help_tags<cr>")
+
 
 -- [[ Basic Options ]]
 -- Set indentation to 4 spaces

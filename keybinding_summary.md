@@ -9,17 +9,18 @@ This file summarizes the keybindings for the installed Neovim plugins.
 |---|---|---|
 | `<leader>e` | Normal | Toggle `nvim-tree` file explorer. |
 
-## Searching (fzf-lua & Telescope)
-
-**Note:** The following keybindings are defined for both `telescope.nvim` and `fzf-lua`. Since `fzf-lua`'s are defined last, they are the ones that take effect.
+## Searching (Telescope)
 
 | Key | Mode | Action | Plugin |
 |---|---|---|---|
-| `<leader>ff` | Normal | Find files. | `fzf-lua` |
-| `<leader>fg` | Normal | Live grep for text in files. | `fzf-lua` |
-| `<leader>fb` | Normal | List open buffers. | `fzf-lua` |
-| `<leader>fh` | Normal | Search help tags. | `fzf-lua` |
-| `<leader>fp` | Normal | Find projects (Telescope). | `telescope.nvim` |
+| `<leader>ff` | Normal | Find files. | `telescope.nvim` |
+| `<leader>fg` | Normal | Live grep for text in files. | `telescope.nvim` |
+| `<leader>fb` | Normal | List open buffers. | `telescope.nvim` |
+| `<leader>fh` | Normal | Search help tags. | `telescope.nvim` |
+| `<leader>fp` | Normal | Find projects. | `telescope-project.nvim` |
+
+| Key | Mode | Action | Plugin |
+|---|---|---|---|
 | `<leader>y` | Normal | Open Yazi file manager. | `yazi.nvim` |
 
 ## Language Server Protocol (LSP)

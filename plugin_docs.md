@@ -14,7 +14,7 @@ This file provides a summary of the installed Neovim plugins and their purpose.
 *   **nvim-lua/plenary.nvim**: A dependency for many plugins, providing useful Lua functions.
 *   **nvim-telescope/telescope-project.nvim**: An extension for Telescope to easily switch between projects.
 *   **nvim-tree/nvim-tree.lua**: A file explorer for Neovim.
-*   **ibhagwan/fzf-lua**: Another fuzzy finder, based on fzf.
+
 *   **mikavilpas/yazi.nvim**: A Neovim plugin for integrating with the Yazi terminal file manager.
 
 ## Coding Assistance
