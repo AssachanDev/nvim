@@ -30,8 +30,6 @@ dashboard.section.buttons.val = {
     dashboard.button("f", "󰈞  Find file", function() require("telescope.builtin").find_files() end),
     dashboard.button("n", "  New file", ":enew <CR>"),
     dashboard.button("p", "  Projects", function() require("telescope").extensions.project.project() end),
-    dashboard.button("d", "  Plugin Docs", ":e ~/.config/nvim/plugin_docs.md <CR>"),
-    dashboard.button("k", "  Keybindings", ":e ~/.config/nvim/keybinding_summary.md <CR>"),
     dashboard.button("h", "󰗖  help", function() require("telescope.builtin").help_tags() end),
     dashboard.button("r", "  Recently used files", function() require("telescope.builtin").oldfiles() end),
     dashboard.button("t", "  Find text", function() require("telescope.builtin").live_grep() end),
