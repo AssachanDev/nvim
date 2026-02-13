@@ -52,14 +52,56 @@ Before you begin, ensure you have the following installed:
 
 ## ⌨️ Keymappings
 
-The core keybindings are defined in `lua/config/keymaps.lua`. Here are a couple of useful ones:
+Your personal command center. The leader key is ` ` (Space).
 
--   `jk` is mapped to `<ESC>` in Insert mode for quick exits.
--   `<leader>e` is mapped to toggle the file explorer.
+All keymaps can be configured in `lua/config/keymaps.lua` and in the individual files in `lua/plugins/`.
 
-The leader key is ` ` (Space).
+### General & Navigation
 
-Feel free to customize and add your own keymaps!
+| Key | Mode | Description |
+|---|---|---|
+| `jk` | Insert | Exit Insert Mode |
+| `<leader>e` | Normal | Toggle file explorer (Neotree) |
+| `<Tab>` | Normal | Cycle to the next buffer/tab |
+
+### Telescope (Fuzzy Finding)
+
+| Key | Mode | Description |
+|---|---|---|
+| `<leader>ff` | Normal | Find files in the project |
+| `<leader>fg` | Normal | Grep for text in the project |
+| `<leader>fb` | Normal | Find and switch between open buffers |
+| `<leader>fh` | Normal | Search help tags |
+
+### Code Execution & REPL
+
+| Key | Mode | Description |
+|---|---|---|
+| `<leader>sl` | Normal | Send current paragraph to a REPL (Slime) |
+| `<leader>sl` | Visual | Send selection to a REPL (Slime) |
+| `<leader>mi` | Normal | Initialize Python REPL (Molten) |
+| `<leader>me` | Normal | Evaluate current line in Python REPL (Molten) |
+| `<leader>me` | Visual | Evaluate selection in Python REPL (Molten) |
+| `<leader>mo` | Normal | Show the Molten output window |
+
+### Git & Diffing
+
+| Key | Mode | Description |
+|---|---|---|
+| `<leader>gd` | Normal | Open a Git diff view (Diffview) |
+| `<leader>gx` | Normal | Close the Git diff view (Diffview) |
+
+### Autocompletion (nvim-cmp)
+
+These keybindings apply when the completion menu is visible.
+
+| Key | Mode | Description |
+|---|---|---|
+| `<C-j>` / `<Tab>` | Insert | Select the next item in the completion list |
+| `<C-k>` | Insert | Select the previous item in the completion list |
+| `<C-Space>` | Insert | Manually trigger autocompletion |
+| `<CR>` | Insert | Confirm the selected completion |
+
 
 ## 📂 Project Structure
 
