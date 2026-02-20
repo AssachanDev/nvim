@@ -40,5 +40,6 @@
   "vim-illuminate": { "branch": "master", "commit": "0d1e93684da00ab7c057410fecfc24f434698898" },
   "vim-slime": { "branch": "main", "commit": "2792879461d3f562a3a353f83ed0dc5dc3f5bb82" },
   "vim-tmux-navigator": { "branch": "master", "commit": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432" },
+  "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
   "yazi.nvim": { "branch": "main", "commit": "015e73f47424e95d4456ff2880f13d106dab3a5d" }
 }
