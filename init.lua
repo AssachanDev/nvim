@@ -6,7 +6,7 @@ if ts.language and not ts.language.ft_to_lang then
 	end
 end
 
-vim.opt.updatetime = 3000
+vim.opt.updatetime = 300
 
 require("config.options")
 require("config.keymaps")

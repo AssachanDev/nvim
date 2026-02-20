@@ -2,14 +2,20 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = {
+			ui = { border = "rounded" },
+		},
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
 			ensure_installed = {
 				"basedpyright",
 				"lua_ls",
-				"rust_analyzer", -- LSPs
+				"rust_analyzer",
 				"stylua",
 				"black",
 				"isort",
-				"rustfmt", -- Formatters
+				"rustfmt",
 			},
 		},
 	},
@@ -26,10 +32,22 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+			-- Standard LSP keybindings
+			vim.api.nvim_create_autocmd("LspAttach", {
+				callback = function(ev)
+					local opts = { buffer = ev.buf, silent = true }
+					vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition", unpack(opts) })
+					vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Docs", unpack(opts) })
+					vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", unpack(opts) })
+					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol", unpack(opts) })
+				end,
+			})
+
 			vim.diagnostic.config({
 				virtual_text = true,
 				float = { border = "rounded", source = "always" },
 			})
+
 			vim.api.nvim_create_autocmd("CursorHold", {
 				callback = function()
 					vim.diagnostic.open_float(nil, { focusable = false })
