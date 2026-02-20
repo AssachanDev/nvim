@@ -1,47 +1,35 @@
-
-# 🚀 AstroNvim Zero - A Lean Neovim Configuration
+# 🚀 AstroNvim Zero - A Lean & Modern Neovim Configuration
 
 A minimal, fast, and highly-customizable Neovim configuration designed for a modern and fluid development experience. Built on the speed of Lua and powered by the `lazy.nvim` plugin manager.
 
 ## ✨ Features
 
-This configuration is built from a curated list of plugins to provide a powerful yet lightweight environment.
+This configuration is built from a curated list of plugins to provide a powerful yet lightweight environment with a focus on visual polish and productivity.
 
 | Plugin | Description |
 |---|---|
-| **[LSP](lua/plugins/lsp.lua)** | Full Language Server Protocol support for diagnostics, definitions, and more. |
-| **[Telescope](lua/plugins/telescope.lua)** | A highly extendable fuzzy finder for files, buffers, and LSP references. |
-| **[Treesitter](lua/plugins/treesitter.lua)** | Advanced syntax highlighting and code parsing for better code understanding. |
-| **[Lualine](lua/plugins/lualine.lua)** | A blazing-fast and beautiful status line. |
-| **[Format](lua/plugins/format.lua)** | Code formatting via `conform.nvim`. |
-| **[Bufferline](lua/plugins/bufferline.lua)** | Elegant buffer/tab management. |
-| **[Telescope](lua/plugins/telescope.lua)** | Fuzzy finding for files, buffers, and more. |
-| **[Colorizer](lua/plugins/colorizer.lua)** | Highlights color codes in your files. |
-| **[Slime](lua/plugins/slime.lua)** | Send code from Neovim to a REPL. |
-| **...and many more!** | Check the `lua/plugins/` directory for the full list. |
-
-## Prerequisites
-
-Before you begin, ensure you have the following installed:
-
-- **Neovim v0.8.0+**
-- **Git**
-- A **Nerd Font** (e.g., [FiraCode Nerd Font](https://www.nerdfonts.com/font-downloads)) for UI icons.
-- A C compiler for `treesitter` (e.g., `gcc`).
+| **[LSP](lua/plugins/lsp.lua)** | Full LSP support with Mason tool auto-installer and custom keybindings. |
+| **[UI & Theme](lua/plugins/ui.lua)** | Catppuccin Mocha with transparency, Neo-tree, Alpha dashboard, and smooth animations. |
+| **[Telescope](lua/plugins/telescope.lua)** | Advanced fuzzy finder for files, buffers, and more. |
+| **[Which-Key](lua/plugins/which-key.lua)** | Interactive keybinding discovery and grouping. |
+| **[Editor Tools](lua/plugins/editor.lua)** | Auto-pairs, powerful commenting, and text surrounding tools. |
+| **[Treesitter](lua/plugins/treesitter.lua)** | Advanced syntax highlighting and code parsing. |
+| **[Lualine](lua/plugins/lualine.lua)** | A beautiful, pill-style status line themed with Catppuccin. |
+| **[Format](lua/plugins/format.lua)** | Automated code formatting via `conform.nvim`. |
+| **[Yazi](lua/plugins/yazi.lua)** | Blazing fast terminal file manager integration. |
+| **...and many more!** | Check the `lua/plugins/` directory for the full list of 25+ plugins. |
 
 ## 🛠️ Installation
 
 1.  **Backup your existing Neovim configuration:**
     ```bash
-    # Backup your current nvim config
     mv ~/.config/nvim ~/.config/nvim.bak
-    # Backup your local nvim data
     mv ~/.local/share/nvim ~/.local/share/nvim.bak
     ```
 
 2.  **Clone this repository:**
     ```bash
-    git clone https://github.com/AssachanDev/nvim.git
+    git clone https://github.com/AssachanDev/nvim.git ~/.config/nvim
     ```
 
 3.  **Start Neovim:**
@@ -53,55 +41,47 @@ Before you begin, ensure you have the following installed:
 ## ⌨️ Keymappings
 
 Your personal command center. The leader key is ` ` (Space).
+**Tip:** Press `<leader>` and wait 0.5s to see the **Which-Key** menu for all shortcuts!
 
-All keymaps can be configured in `lua/config/keymaps.lua` and in the individual files in `lua/plugins/`.
+### 🔍 Discovery & Navigation
+| Key | Description |
+|---|---|
+| `<leader>?` | Show all buffer-local keymaps |
+| `:Telescope keymaps` | Search through every available keybinding |
+| `<leader>e` | Toggle Neo-tree file explorer |
+| `<Tab>` | Cycle to the next buffer/tab |
+| `jk` | Exit Insert Mode |
 
-### General & Navigation
+### 💻 LSP (Coding)
+| Key | Description |
+|---|---|
+| `gd` | Go to Definition |
+| `K` | Hover Documentation |
+| `<leader>ca` | Code Actions |
+| `<leader>rn` | Rename Symbol |
 
-| Key | Mode | Description |
-|---|---|---|
-| `jk` | Insert | Exit Insert Mode |
-| `<leader>e` | Normal | Toggle file explorer (Neotree) |
-| `<Tab>` | Normal | Cycle to the next buffer/tab |
+### 🔭 Telescope (Find)
+| Key | Description |
+|---|---|
+| `<leader>ff` | Find Files |
+| `<leader>fg` | Live Grep (Search text) |
+| `<leader>fb` | Switch Buffers |
+| `<leader>fh` | Search Help Tags |
 
-### Telescope (Fuzzy Finding)
+### 🐍 REPL & Execution
+| Key | Description |
+|---|---|
+| `<leader>sl` | Send to Slime (tmux REPL) |
+| `<leader>mi` | Initialize Molten (Python) |
+| `<leader>me` | Evaluate in Molten |
+| `<leader>mo` | Show Molten Output |
 
-| Key | Mode | Description |
-|---|---|---|
-| `<leader>ff` | Normal | Find files in the project |
-| `<leader>fg` | Normal | Grep for text in the project |
-| `<leader>fb` | Normal | Find and switch between open buffers |
-| `<leader>fh` | Normal | Search help tags |
-
-### Code Execution & REPL
-
-| Key | Mode | Description |
-|---|---|---|
-| `<leader>sl` | Normal | Send current paragraph to a REPL (Slime) |
-| `<leader>sl` | Visual | Send selection to a REPL (Slime) |
-| `<leader>mi` | Normal | Initialize Python REPL (Molten) |
-| `<leader>me` | Normal | Evaluate current line in Python REPL (Molten) |
-| `<leader>me` | Visual | Evaluate selection in Python REPL (Molten) |
-| `<leader>mo` | Normal | Show the Molten output window |
-
-### Git & Diffing
-
-| Key | Mode | Description |
-|---|---|---|
-| `<leader>gd` | Normal | Open a Git diff view (Diffview) |
-| `<leader>gx` | Normal | Close the Git diff view (Diffview) |
-
-### Autocompletion (nvim-cmp)
-
-These keybindings apply when the completion menu is visible.
-
-| Key | Mode | Description |
-|---|---|---|
-| `<C-j>` / `<Tab>` | Insert | Select the next item in the completion list |
-| `<C-k>` | Insert | Select the previous item in the completion list |
-| `<C-Space>` | Insert | Manually trigger autocompletion |
-| `<CR>` | Insert | Confirm the selected completion |
-
+### 🛠️ Development Tools
+| Key | Description |
+|---|---|
+| `<leader>p` | PlatformIO Tools (Build, Upload, Monitor) |
+| `<leader>y` | Open Yazi File Manager |
+| `<leader>gd` | Open Git Diffview |
 
 ## 📂 Project Structure
 
@@ -109,12 +89,7 @@ These keybindings apply when the completion menu is visible.
 .
 ├── init.lua          -- Main entry point
 ├── lua/
-│   ├── config/
-│   │   ├── keymaps.lua -- Global keybindings
-│   │   ├── lazy.lua    -- lazy.nvim setup
-│   │   └── options.lua -- Neovim options
-│   └── plugins/        -- All plugin configurations
-└── lazy-lock.json      -- Pin plugin versions
+│   ├── config/       -- core options and basic keymaps
+│   └── plugins/      -- modular plugin configurations
+└── lazy-lock.json      -- pinned plugin versions
 ```
-
----
